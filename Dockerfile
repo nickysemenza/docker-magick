@@ -7,7 +7,13 @@ RUN echo "deb http://www.deb-multimedia.org bullseye main" > /etc/apt/sources.li
 RUN apt-get update -oAcquire::AllowInsecureRepositories=true
 RUN apt-get install -y deb-multimedia-keyring --allow-unauthenticated
 RUN apt-get install -y imagemagick-7 --allow-unauthenticated
-
 RUN wget https://imagemagick.org/download/binaries/magick && \
 	chmod +x magick && \
 	mv magick /usr/local/bin/magick
+
+# latex too
+RUN apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+
+# check paths
+RUN which pdflatex
+RUN which magick
