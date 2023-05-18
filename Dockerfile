@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:bullseye-slim
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y ca-certificates wget libfuse2 libfreetype6 libglib2.0-0 libfontconfig libx11-6 imagemagick
 RUN update-ca-certificates
