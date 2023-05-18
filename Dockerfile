@@ -13,6 +13,8 @@ RUN wget https://imagemagick.org/download/binaries/magick && \
 
 # latex too
 RUN apt-get install -y texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+# other useful utils
+RUN apt-get install -y unzip postgresql
 
 # check paths
 RUN which pdflatex
